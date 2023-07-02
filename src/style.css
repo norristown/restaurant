@@ -1,0 +1,84 @@
+body {
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/src/hotdog_bg.jpg);
+    background-size: 550px;
+    margin: 0;
+}
+
+h1 {
+    background-color: beige;
+    font-size: 5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #FBAC4D;
+    width: 100%;
+    color: #6D184F;
+    font-family: monospace;
+}
+
+.nav div {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    background-color: inherit;
+    float: left;
+    border: 2px solid #FBAC4D;
+    ;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: 0.3s;
+    font-size: 24px;
+}
+
+.nav div:hover {
+    background-color: #6D184F;
+    color: #FBAC4D;
+  }
+
+.container {
+    margin: 2rem 0;
+    font-size: 5rem;
+}
+
+.content {
+    margin-top: 2rem;
+    background-color: #FBAC4D;
+    width: 900px;
+    height: 750px;
+    border-radius: 25px;
+    border: 5px solid #6D184F;
+    color: #6D184F;
+    padding: 0 100px;
+}
+
+.description {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.spot-pic {
+    border-radius: 50%;
+    border: 2px solid #6D184F;
+}
+
+.quoteContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
