@@ -1,51 +1,36 @@
-function pageOne() {
-    const page = {
-        blurb:
-            `"Hot Dog Heaven is the best in hot dog flavor! 
-            I come by at least three times a week and I would actually come more, 
-            but I must exhbit some kind of self-control! HOT DOG HEAVEN NUMBER ONE!"`,
-        author: `-Spot`,
-        pic: '/src/dog_quote.jpg',
-        mascot: '/src/cute_hotdog.jpg'
-    }
+class PageOne {
+    constructor(className, divContent) {
+        this.className = className;
+        this.div = divContent;
 
-    const content = document.querySelector('.content');
-    const container = document.createElement('div');
-    container.classList.add('container')
-    const hotDogImg = document.createElement('img');
-    hotDogImg.classList.add('cute-hotdog');
-    hotDogImg.src = page.mascot;
-    hotDogImg.height = 300;
-    hotDogImg.width = 300;
-    container.textContent = `Hot Dog Heaven`;
-    content.appendChild(hotDogImg)
-    content.appendChild(container)
-
-    const description = document.createElement('div');
-    description.classList.add('description')
-    description.textContent = page.blurb
-    content.appendChild(description)
-
-    console.log(review.blurb)
-    // const quoteContainer = document.createElement('div');
-    // quoteContainer.classList.add('quoteContainer')
-    // description.appendChild(quoteContainer)
-    // const spot = document.createElement('div');
-    // spot.classList.add('spot');
-    // spot.textContent = `-Spot`
-    // content.appendChild(description)
-    // quoteContainer.appendChild(spot)
-
-    // const img = document.createElement('img');
-    // img.classList.add('spot-pic')
-    // img.src = '/src/dog_quote.jpg'
-    // img.height = 100;
-    // img.width = 100;
-    // quoteContainer.appendChild(img)
-
-    
-
-
+        this.element = document.createElement('div');
+        this.element.className = className;
+        this.element.innerHTML = divContent;
+    } 
 }
 
-export default pageOne;
+const testClass = 'container'
+const testContent = 'Hot Dog Heaven'
+const blurbClass = 'description'
+const blurbContent = `"Hot Dog Heaven is the best in hot dog flavor! 
+    I come by at least three times a week and I would actually come more, 
+    but I must exhbit some kind of self-control! HOT DOG HEAVEN NUMBER ONE!"`
+const cuteHotDogSrc = `<img src="/src/cute_hotdog.jpg" class="hot-dog" alt="cute hot dog" width="200" height="200">`;
+const cuteHotDogClassName = 'hot-dog'
+
+const spotClass = 'spot'
+const spotSrc = `-Spot<img src ="/src/dog_quote.jpg" alt="handsome dog" class="spot-pic">`
+
+const title = new PageOne(testClass, testContent)
+const blurb = new PageOne(blurbClass, blurbContent)
+const img = new PageOne(cuteHotDogClassName, cuteHotDogSrc)
+const dogImg = new PageOne(spotClass, spotSrc)
+
+const content = document.querySelector('.content');
+
+content.appendChild(img.element)
+content.appendChild(title.element)
+content.appendChild(blurb.element)
+content.appendChild(dogImg.element)
+
+export default PageOne;

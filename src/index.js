@@ -12,10 +12,10 @@ import './style.css';
 // const content = document.querySelector('body')
 // content.appendChild(myIcon);
 
-import pageOne from './pageOne';
+import PageOne from './pageOne';
 function component() {
     const element = document.createElement('div');
-    element.textContent = pageOne();
+    element.textContent = PageOne();
     return element
 }
 
