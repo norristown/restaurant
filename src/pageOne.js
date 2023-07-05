@@ -1,12 +1,14 @@
 class PageOne {
     constructor(className, divContent) {
+
+        if (divContent === null) { this.div = '' }
         this.className = className;
         this.div = divContent;
 
         this.element = document.createElement('div');
         this.element.className = className;
         this.element.innerHTML = divContent;
-    } 
+    }
 }
 
 const testClass = 'container'
@@ -27,10 +29,40 @@ const img = new PageOne(cuteHotDogClassName, cuteHotDogSrc)
 const dogImg = new PageOne(spotClass, spotSrc)
 
 const content = document.querySelector('.content');
+for (let i = 0; i < 4; i++) {
+    const divContainer = new PageOne(`container-${[i + 1]}`, '')
+    content.appendChild(divContainer.element)
+}
 
-content.appendChild(img.element)
-content.appendChild(title.element)
-content.appendChild(blurb.element)
-content.appendChild(dogImg.element)
+const header = document.querySelector('.container-1')
+const middle = document.querySelector('.container-2')
+const end = document.querySelector('.container-3')
+const hoursDiv = document.querySelector('.container-4')
+hoursDiv.innerHTML = `<div class="hours-header">Hours</div>`
 
-export default PageOne;
+header.appendChild(img.element)
+header.appendChild(title.element)
+middle.appendChild(blurb.element)
+end.appendChild(dogImg.element)
+
+const hours = {
+    'Sunday': '12pm - 12am',
+    'Monday': '12pm - 12am',
+    'Tuesday': '12pm - 12am',
+    'Wednesday': '12pm - 12am',
+    'Thursday': '12pm - 12am',
+    'Friday': '12pm - 12am',
+    'Saturday': '12pm - 12am'
+}
+
+const location = 'Location: 123 Hot Dog Heaven Road, Norristown USA 10101'
+const locationDiv = new PageOne('location', location)
+content.appendChild(locationDiv.element)
+
+
+for (const [key, value] of Object.entries(hours)) {
+    const hourInfo = new PageOne('hour-info', `${key}: ${value}`)
+    hoursDiv.appendChild(hourInfo.element)
+}
+
+export default PageOne();

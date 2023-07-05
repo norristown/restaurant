@@ -15,7 +15,7 @@ import './style.css';
 import PageOne from './pageOne';
 function component() {
     const element = document.createElement('div');
-    element.textContent = PageOne();
+    element.textContent = new PageOne();
     return element
 }
 
