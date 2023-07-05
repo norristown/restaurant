@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/norristown/restaurant/issues"
   },
-  "homepage": "https://github.com/norristown/restaurant#index.html",
+  "homepage": "https://github.com/norristown/restaurant#readme",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
